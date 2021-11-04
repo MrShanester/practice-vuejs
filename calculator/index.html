@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js Intro</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+    <div>X: <input type="text" v-model="num1"></div>
+    <div>Y: <input type="text" v-model="num2"></div>
+    <div><button v-on:click="calculateSum()">Compute X + Y</button></div>
+    <p>The sum is: {{ calculateSum() }}</p>
+    <div><button v-on:click="calculateProduct()">Compute X * Y</button></div>
+    <p>The product is: {{ calculateProduct() }}</p>
+    <div><button v-on:click="calculateQuotient()">Compute X / Y</button></div>
+    <p>The quotient is: {{ calculateQuotient() }}</p>
+    <div><button v-on:click="calculateExponent()">Compute X to the power of Y</button></div>
+    <p>The result is: {{ calculateExponent() }}</p>
+  </div>
+</body>
+</html>
