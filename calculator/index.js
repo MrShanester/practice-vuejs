@@ -4,7 +4,7 @@ var app = new Vue({
   el: "#app",
   data: function () {
     return {
-      message: "Hello User!",
+      message: "Thank you for using S-Calc: Version 3.12.7!",
       num1: 0,
       num2: 0,
       sum: 0,
@@ -12,6 +12,9 @@ var app = new Vue({
       quotient: 0,
       exponent: 0,
       hold: 0,
+      showInfo: false,
+      numbers: [],
+      newNumber: "",
     };
   },
   methods: {
@@ -34,6 +37,10 @@ var app = new Vue({
       }
       this.exponent = this.hold;
       return this.exponent;
+    },
+    addNumber: function () {
+      this.numbers.push(this.newNumber);
+      this.newNumber = "";
     },
   },
 });

@@ -9,16 +9,25 @@
 <body>
   <div id="app">
     {{ message }}
+    <p></p>
     <div>X: <input type="text" v-model="num1"></div>
     <div>Y: <input type="text" v-model="num2"></div>
-    <div><button v-on:click="calculateSum()">Compute X + Y</button></div>
-    <p>The sum is: {{ calculateSum() }}</p>
-    <div><button v-on:click="calculateProduct()">Compute X * Y</button></div>
-    <p>The product is: {{ calculateProduct() }}</p>
-    <div><button v-on:click="calculateQuotient()">Compute X / Y</button></div>
-    <p>The quotient is: {{ calculateQuotient() }}</p>
-    <div><button v-on:click="calculateExponent()">Compute X to the power of Y</button></div>
-    <p>The result is: {{ calculateExponent() }}</p>
+    <p>X plus Y is: {{ calculateSum() }}</p>
+    <p>X times Y is: {{ calculateProduct() }}</p>
+    <p>X divided by Y is: {{ calculateQuotient() }}</p>
+    <p>X to the power of Y is: {{ calculateExponent() }}</p>
+    <p>----------------------</p>
+    <p>Comment Section:</p>
+    <div v-for="number in numbers">
+      <p>{{ number }}</p>
+    </div>
+    <input type="text" v-model="newNumber">
+    <button v-on:click="addNumber()"> Add a Comment</button>
+    <p></p>
+    <button v-on:click="showInfo = !showInfo">Click me to see a secret!</button>
+    <p v-if="showInfo">You're the Best!!</p>
+    <p></p>
   </div>
+
 </body>
 </html>
