@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="products.js" defer></script>
+  </head>
+  <body>
+    <h1>Hello from HTML!</h1>
+    <div id="app">
+      {{ message }}
+      <p>---------------------------</p>
+      <button v-on:click="loadProducts()">Show Products</button>
+      
+      <li v-for="product in products">{{ product.name }}</li>
+
+      <h2>Add a product:</h2>
+      <p>Name:</p>
+      <input type="string" v-model="name">
+      <p>Description:</p>
+      <input type="string" v-model="description">
+      <p>Image Url:</p>
+      <input type="string" v-model="image_url">
+      <p>Price:</p>
+      <input type="integer" v-model="price">
+      
+      <button v-on:click="makeProduct()">Create Task</button>
+      <p>{{ message2 }}</p>
+    </div>
+  </body>
+</html>
