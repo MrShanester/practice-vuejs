@@ -4,13 +4,24 @@
     <meta charset="UTF-8" />
     <title>Todos Vue.js</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="todos.js" defer></script>
   </head>
   <body>
-    <h1>Hello from HTML!</h1>
+    <h1>TODO LIST!</h1>
     <div id="app">
       {{ message }}
+      <p>---------------------------</p>
+      <button v-on:click="loadnames()">Show Todo List</button>
       <li v-for="todo in todos">{{ todo.title }}</li>
+      <h2>Add a task:</h2>
+      <p>User id:</p>
+      <input type="integer" v-model="userId">
+      <p>Task title:</p>
+      <input type="string" v-model="title">
+      <p></p>
+      <button v-on:click="maketodo()">Create Task</button>
+      <p>{{ message2 }}</p>
     </div>
   </body>
 </html>
