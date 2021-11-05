@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="index.js" defer></script>
+  <title>Practive Vue</title>
+</head>
+<body>
+  <h1>HTML says "Hi!"</h1>
+    <div id="app">
+      {{ message }}
+    </div>
+    <p></p>
+    <div id="app-2">
+      <span v-bind:title="message">
+        It's okay, I'm fine now.
+      </span>
+    </div>
+    <p></p>
+    <div id="app-5">
+      <button v-on:click="reverseMessage">Change Contentedness!</button>
+      <p>{{ message }}</p>
+      
+    </div>
+    <div id="button">
+      <h1>{{ message }}</h1>
+
+      <button v-on:click="changeMessage()">Lets Change That!</button>
+    </div>
+
+    <div id="dynamic">
+      <input type="text" v-model="words" />
+      <button v-on:click="changeMessage()">See Your Words!</button>
+      <h1>{{ message }}</h1>
+    </div>
+
+    <div>
+      <button v-on:click>Click me to see a secret!</button>
+      <p v-if="false">You're the Best!</p>
+    </div>
+</body>
+</html>
